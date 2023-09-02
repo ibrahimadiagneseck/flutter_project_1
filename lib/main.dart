@@ -202,6 +202,193 @@ void main() {
 // }
 
 
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: "App 1",
+//         home: Scaffold(
+//             backgroundColor: Colors.grey,
+//             appBar: AppBar(
+//               title: Text("Day 1"),
+//               leading: Icon(Icons.home),
+//               backgroundColor: Colors.black,
+//             ),
+//             body: Text(
+//                 "Hello!! Coders, You are here with this new event based on Flutter!!!",
+//                 style: TextStyle(
+//                   color: Colors.blue,
+//                   fontSize: 20,
+//                   fontStyle: FontStyle.italic,
+//                   fontWeight: FontWeight.w700,
+//                   backgroundColor: Colors.amberAccent,
+//                   letterSpacing: 4.0,
+//                   wordSpacing: 15.0
+//                 ),
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: "App 1",
+//         home: Scaffold(
+//             backgroundColor: Colors.grey,
+//             appBar: AppBar(
+//               title: Text("Day 1"),
+//               leading: Icon(Icons.home),
+//               backgroundColor: Colors.black,
+//             ),
+//             body: Center(
+//               child: Text(
+//                 "Hello!! Coders, You are here with this new event based on Flutter!!!",
+//                 style: TextStyle(
+//                     color: Colors.blue,
+//                     fontSize: 20,
+//                     fontStyle: FontStyle.italic,
+//                     fontWeight: FontWeight.w700,
+//                     backgroundColor: Colors.amberAccent,
+//                     letterSpacing: 4.0,
+//                     wordSpacing: 15.0,
+//                     shadows: [
+//                       Shadow(
+//                         color: Colors.lightBlueAccent,
+//                         offset: Offset(3.0, 3.0)
+//                       )
+//                     ]
+//                 ),
+//               ),
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: "App 1",
+//         home: Scaffold(
+//             backgroundColor: Colors.grey,
+//             appBar: AppBar(
+//               title: Text("Day 1"),
+//               leading: Icon(Icons.home),
+//               backgroundColor: Colors.black,
+//             ),
+//             body: Column(
+//               children: [
+//                 Text(
+//                   "Hello!! Coders, You are here with this new event based on Flutter!!!",
+//                   style: TextStyle(
+//                       color: Colors.blue,
+//                       fontSize: 20,
+//                       fontStyle: FontStyle.italic,
+//                       fontWeight: FontWeight.w700,
+//                       backgroundColor: Colors.amberAccent,
+//                       letterSpacing: 4.0,
+//                       wordSpacing: 15.0,
+//                       shadows: [
+//                         Shadow(
+//                             color: Colors.lightBlueAccent,
+//                             offset: Offset(3.0, 3.0)
+//                         )
+//                       ]
+//                   )
+//                 ),
+//                 RichText(
+//                   text: TextSpan(
+//                     text: 'Hello!!!',
+//                     children: <TextSpan>[
+//                       TextSpan(
+//                         text: 'Coders'
+//                       )
+//                     ]
+//                   ),
+//                 )
+//               ]
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: "App 1",
+//         home: Scaffold(
+//             backgroundColor: Colors.grey,
+//             appBar: AppBar(
+//               title: Text("Day 1"),
+//               leading: Icon(Icons.home),
+//               backgroundColor: Colors.black,
+//             ),
+//             body: Column(
+//                 children: [
+//                   Text(
+//                       "Hello!! Coders, You are here with this new event based on Flutter!!!",
+//                       style: TextStyle(
+//                           color: Colors.blue,
+//                           fontSize: 20,
+//                           fontStyle: FontStyle.italic,
+//                           fontWeight: FontWeight.w700,
+//                           backgroundColor: Colors.amberAccent,
+//                           letterSpacing: 4.0,
+//                           wordSpacing: 15.0,
+//                           shadows: [
+//                             Shadow(
+//                                 color: Colors.lightBlueAccent,
+//                                 offset: Offset(3.0, 3.0)
+//                             )
+//                           ]
+//                       )
+//                   ),
+//                   Padding(
+//                     padding: const EdgeInsets.all(8.0),
+//                     child: RichText(
+//                       text: TextSpan(
+//                           text: 'Hello!!!',
+//                           style: TextStyle(
+//                             color: Colors.amber
+//                           ),
+//                           children: <TextSpan>[
+//                             TextSpan(
+//                                 text: 'Coders',
+//                                 style: TextStyle(
+//                                     color: Colors.blueAccent
+//                                 ),
+//                             )
+//                           ]
+//                       ),
+//                     ),
+//                   ),
+//                   TextField(
+//                     decoration: InputDecoration(
+//                       border: InputBorder.none,
+//                       labelText: 'Name',
+//                       hintText: 'Enter Your name'
+//                     ),
+//                   )
+//                 ]
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -214,15 +401,57 @@ class MyApp extends StatelessWidget {
               leading: Icon(Icons.home),
               backgroundColor: Colors.black,
             ),
-            body: Text(
-                "Hello!! Coders, You are here with this new event based on Flutter!!!",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w700,
-                  backgroundColor: Colors.amberAccent
-                ),
+            body: Column(
+                children: [
+                  Text(
+                      "Hello!! Coders, You are here with this new event based on Flutter!!!",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 20,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.w700,
+                          backgroundColor: Colors.amberAccent,
+                          letterSpacing: 4.0,
+                          wordSpacing: 15.0,
+                          shadows: [
+                            Shadow(
+                                color: Colors.lightBlueAccent,
+                                offset: Offset(3.0, 3.0)
+                            )
+                          ]
+                      )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RichText(
+                      text: TextSpan(
+                          text: 'Hello!!!',
+                          style: TextStyle(
+                              color: Colors.amber
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Coders',
+                              style: TextStyle(
+                                  color: Colors.blueAccent
+                              ),
+                            )
+                          ]
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Name',
+                          hintText: 'Enter Your name'
+                      ),
+                    ),
+                  )
+                ]
             )
         )
     );
