@@ -1,9 +1,12 @@
 // import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'dart:collection';
 
-void main() {
-  runApp(MyApp());
-}
+import 'package:flutter/material.dart';
+import 'package:flutter_project_1/newcard.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
 
 // class MyApp extends StatelessWidget {
 //   @override
@@ -1107,95 +1110,722 @@ void main() {
 
 
 
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         title: "My App",
+//         home: Scaffold(
+//             appBar: AppBar(
+//                 title: Text("Card Widget"),
+//                 backgroundColor: Colors.black
+//             ),
+//             body: Padding(
+//               padding: const EdgeInsets.all(28.0),
+//               child: Center(
+//                 child: Container(
+//                   height: 200,
+//                   width: 300,
+//                   child: Card(
+//                     color: Colors.yellow,
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(30)
+//                     ),
+//                     elevation: 10,
+//                     child: Column(
+//                       mainAxisSize: MainAxisSize.min,
+//                       children: [
+//                         Padding(
+//                           padding: const EdgeInsets.all(14.0),
+//                           child: ListTile(
+//                             leading: Icon(
+//                                 Icons.person,
+//                                 size: 40,
+//                                 color: Colors.blue,
+//                             ),
+//                             title: Text(
+//                               "Ibrahima Diagne Seck",
+//                               style: TextStyle(
+//                                 fontSize: 20,
+//                                 color: Colors.black
+//                               ),
+//                             ),
+//                             subtitle: Text(
+//                               "COO",
+//                               style: TextStyle(
+//                                   fontWeight: FontWeight.w700,
+//                                 fontSize: 16
+//                               )
+//                             ),
+//                           ),
+//                         ),
+//                         ButtonBar(
+//                           children: [
+//                             ElevatedButton.icon(
+//                               onPressed: () {},
+//                               icon: Icon(
+//                                 Icons.call,
+//                                 size: 24.0,
+//                               ),
+//                               label: Text('Contact'),
+//                             ),
+//                             TextButton.icon(
+//                               onPressed: () {},
+//                               style: TextButton.styleFrom(
+//                                 foregroundColor: Colors.white,
+//                                 backgroundColor: Colors.blue
+//                               ),
+//                               icon: Icon(
+//                                 Icons.location_city,
+//                                 size: 24.0,
+//                               ),
+//                               label: Text('Location'),
+//                             ),
+//                             // OutlinedButton.icon(
+//                             //   onPressed: () {},
+//                             //   icon: Icon(
+//                             //     Icons.download,
+//                             //     size: 24.0,
+//                             //   ),
+//                             //   label: Text('Download'),
+//                             // )
+//                           ],
+//                         ),
+//
+//                       ],
+//                     ),
+//                   )
+//                 ),
+//               ),
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+
+
+
+
+
+
+// *********************************************************************
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return MaterialApp(
+//         title: "My App",
+//         home: Scaffold(
+//             appBar: AppBar(
+//                 title: Text("Drawer ans Tab bar"),
+//                 backgroundColor: Colors.black
+//             ),
+//             drawer: Drawer(
+//               child: ListView(
+//                 padding: EdgeInsets.all(8.0),
+//                 children: [
+//                   UserAccountsDrawerHeader(
+//                     accountName: Text("Ibrahima Diagne Seck"),
+//                     accountEmail: Text("ibrahimadiagnedeck@esp.sn"),
+//                     currentAccountPicture: Container(
+//                       width: 60,
+//                       height: 60,
+//                       decoration: BoxDecoration(
+//                         color: Colors.white,
+//                         borderRadius: BorderRadius.circular(100),
+//                         image: DecorationImage(
+//                           image: AssetImage("assets/joker.jpeg"),
+//                           fit: BoxFit.cover
+//                         )
+//                       ),
+//                     ),
+//                   ),
+//                   ListTile(
+//                     leading: Icon(Icons.home),
+//                     title: Text("Home"),
+//                     onTap: () {
+//                       HomePage();
+//                     },
+//                   ),
+//                   ListTile(
+//                     leading: Icon(Icons.settings),
+//                     title: Text("Settings"),
+//                     onTap: () {
+//                       HomePage();
+//                     },
+//                   ),
+//                   ListTile(
+//                     leading: Icon(Icons.local_grocery_store),
+//                     title: Text("Store"),
+//                     onTap: () {
+//                       HomePage();
+//                     },
+//                   )
+//                 ],
+//               ),
+//             ),
+//             body: Center(
+//               child: Container(
+//                 width: 60,
+//                 height: 60,
+//                 decoration: BoxDecoration(
+//                     color: Colors.white,
+//                     borderRadius: BorderRadius.circular(100),
+//                     image: DecorationImage(
+//                         image: AssetImage("assets/joker.jpeg"),
+//                         fit: BoxFit.cover
+//                     )
+//                 )
+//               ),
+//             )
+//         )
+//     );
+//   }
+// }
+//
+// class HomePage extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: Text("Home"),
+//     );
+//   }
+// }
+
+// *********************************************************************
+
+
+
+// *********************************************************************
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     return MaterialApp(
+//         title: "My App",
+//         home: DefaultTabController(
+//           length: 3,
+//           child: Scaffold(
+//             appBar: AppBar(
+//               title: Text("TabBar"),
+//               backgroundColor: Colors.black,
+//               bottom: TabBar(
+//                 tabs: [
+//                   Tab(icon: Icon(Icons.home), text: "Home"),
+//                   Tab(icon: Icon(Icons.settings), text: "Settings"),
+//                   Tab(icon: Icon(Icons.local_grocery_store), text: "Store")
+//                 ],
+//               ),
+//             ),
+//             body: TabBarView(
+//               children: [
+//                 HomePage(),
+//                 SettingPage(),
+//                 StorePage(),
+//               ],
+//             ),
+//           ),
+//         )
+//     );
+//   }
+// }
+//
+// class HomePage extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Container(
+//         child: Text("Home", style: TextStyle(fontSize: 60)),
+//       ),
+//     );
+//   }
+// }
+//
+// class SettingPage extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Container(
+//         child: Text("Setting", style: TextStyle(fontSize: 60)),
+//       ),
+//     );
+//   }
+// }
+//
+// class StorePage extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Container(
+//         child: Text("Store", style: TextStyle(fontSize: 60)),
+//       ),
+//     );
+//   }
+// }
+
+
+// *********************************************************************
+
+
+
+
+// **************************************************
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: AlertWidget(),
+//     );
+//   }
+// }
+//
+// class AlertWidget extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           child: OutlinedButton.icon(
+//             onPressed: () {
+//               alertdialogwidget(context);
+//             },
+//             style: TextButton.styleFrom(
+//               foregroundColor: Colors.white,
+//               backgroundColor: Colors.blue
+//             ),
+//             icon: Icon(
+//               Icons.circle,
+//               size: 24.0,
+//             ),
+//             label: Text('Basic AlertDialog'),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+// alertdialogwidget(BuildContext context) {
+//   showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//           title: Text("Basic"),
+//           content: Text("this is for notification purpose!!"),
+//           actions: [
+//             TextButton(
+//                 onPressed: () {
+//                   Navigator.of(context).pop();
+//                 },
+//                 style: TextButton.styleFrom(
+//                   foregroundColor: Colors.white,
+//                   backgroundColor: Colors.lightBlueAccent
+//                 ),
+//                 child: Text("OK")
+//             )
+//           ]
+//         );
+//       }
+//   );
+// }
+
+
+// **************************************************
+
+
+
+
+
+
+
+
+// **************************************************
+
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: AlertWidget(),
+//     );
+//   }
+// }
+//
+// class AlertWidget extends StatelessWidget {
+//
+//   TextEditingController _textEditingController = new TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Container(
+//           child: OutlinedButton.icon(
+//             onPressed: () async {
+//               // textfieldalertdialogwidget(context, _textEditingController);
+//
+//               // final field fieldatt = await confirmalertdialogwidget(context);
+//               // print("User Selection $fieldatt");
+//
+//               final selectopt option = await selectionoptionalalertdialogwidget(context);
+//               print(option);
+//             },
+//             style: TextButton.styleFrom(
+//                 foregroundColor: Colors.white,
+//                 backgroundColor: Colors.blue
+//             ),
+//             icon: Icon(
+//               Icons.circle,
+//               size: 24.0,
+//             ),
+//             label: Text('Basic AlertDialog'),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+// textfieldalertdialogwidget(BuildContext context, TextEditingController textEditingController) {
+//   showDialog(
+//       context: context,
+//       builder: (BuildContext context) {
+//         return AlertDialog(
+//             title: Text("TextField"),
+//             content: TextField(
+//               decoration: InputDecoration(
+//                 hintText: "Enter whetever you want",
+//               ),
+//               controller: textEditingController,
+//             ),
+//             actions: [
+//               TextButton(
+//                   onPressed: () {
+//                     Navigator.of(context).pop();
+//                   },
+//                   style: TextButton.styleFrom(
+//                       foregroundColor: Colors.white,
+//                       backgroundColor: Colors.lightBlueAccent
+//                   ),
+//                   child: Text("OK")
+//               )
+//             ]
+//         );
+//       }
+//   );
+// }
+//
+// enum field {Confirm, Accept}
+//
+// Future<field> confirmalertdialogwidget(BuildContext context) async {
+//   var result = await showDialog<field>(
+//     context: context,
+//     barrierDismissible: false,
+//     builder: (BuildContext context) {
+//       return AlertDialog(
+//         title: Text("Confirm"),
+//         content: Text("This is for notification purpose!!!"),
+//         actions: [
+//           TextButton(
+//             onPressed: () {
+//               Navigator.of(context).pop(field.Confirm);
+//             },
+//             style: TextButton.styleFrom(
+//               foregroundColor: Colors.white,
+//               backgroundColor: Colors.lightBlueAccent,
+//             ),
+//             child: Text("Cancel"),
+//           ),
+//           TextButton(
+//             onPressed: () {
+//               Navigator.of(context).pop(field.Accept);
+//             },
+//             style: TextButton.styleFrom(
+//               foregroundColor: Colors.white,
+//               backgroundColor: Colors.lightBlueAccent,
+//             ),
+//             child: Text("Accept"),
+//           ),
+//         ],
+//       );
+//     },
+//   );
+//
+//   return result ?? field.Confirm; // Renvoie result s'il n'est pas nul, sinon renvoie field.Confirm par défaut
+// }
+//
+//
+//
+// enum selectopt {C, Java, Python, PHP}
+//
+// Future<selectopt> selectionoptionalalertdialogwidget(BuildContext context) async {
+//
+//   var result = await showDialog<selectopt>(
+//     context: context,
+//     barrierDismissible: true,
+//     builder: (BuildContext context) {
+//       return SimpleDialog(
+//         title: Text("Choose any one"),
+//         children: [
+//           SimpleDialogOption(
+//             onPressed: () {
+//               Navigator.pop(context, selectopt.C);
+//             },
+//             child: Text("C")
+//           ),
+//           SimpleDialogOption(
+//               onPressed: () {
+//                 Navigator.pop(context, selectopt.Java);
+//               },
+//               child: Text("Java")
+//           ),
+//           SimpleDialogOption(
+//               onPressed: () {
+//                 Navigator.pop(context, selectopt.Python);
+//               },
+//               child: Text("Python")
+//           ),
+//           SimpleDialogOption(
+//               onPressed: () {
+//                 Navigator.pop(context, selectopt.PHP);
+//               },
+//               child: Text("PHP")
+//           ),
+//         ],
+//       );
+//     }
+//   );
+//
+//   return result ?? selectopt.C; // Renvoie result s'il n'est pas nul, sinon renvoie field.Confirm par défaut
+// }
+
+// **************************************************
+
+
+
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Basic List"),
+//         ),
+//         body: ListView(
+//           children: [
+//             ListTile(
+//               leading: Icon(Icons.home),
+//               title: Text("Home"),
+//               // trailing: Icon(Icons.home),
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.settings),
+//               title: Text("Setting")
+//             ),
+//             ListTile(
+//                 leading: Icon(Icons.person_pin),
+//                 title: Text("Profile")
+//             ),
+//             ListTile(
+//                 leading: Icon(Icons.call),
+//                 title: Text("Contact")
+//             )
+//           ],
+//         )
+//       )
+//     );
+//   }
+// }
+
+
+// ********************************************************
+// ********************************************************
+// ********************************************************
+// ********************************************************
+// ********************************************************
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp(
+//     names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   final List<String> names;
+//
+//   MyApp({Key? key, required this.names}):super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("Long List"),
+//             ),
+//             body: ListView.builder(
+//                 itemCount: names.length,
+//                 itemBuilder: (context, index) {
+//                   return ListTile(
+//                     title: Text("Hii ${names[index]}"),
+//                   );
+//                 }
+//             ),
+//         )
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp(
+//       // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   // final List<String> names;
+//
+//   // MyApp({Key? key, required this.names}):super(key: key);
+//
+// @override
+// Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//           appBar: AppBar(
+//             title: Text("GridView List"),
+//           ),
+//           body: GridView.count(
+//               crossAxisCount: 2,
+//               children: List.generate(datas.length, (index) {
+//                   return Center(
+//                     child: NewCard(
+//                       datas: datas[index],
+//                     )
+//                   );
+//                 })
+//           )
+//         )
+//     );
+//   }
+// }
+//
+// class data {
+//   const data({
+//     required this.title,
+//     required this.icon
+//   });
+//   final String title;
+//   final IconData icon;
+// }
+//
+// const List<data> datas = const <data>[
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//
+// ];
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+void main() {
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "My App",
         home: Scaffold(
             appBar: AppBar(
-                title: Text("Image Widget"),
-                backgroundColor: Colors.black
+              title: Text("Horizontal List"),
             ),
-            body: Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: Center(
-                child: Container(
-                  height: 200,
-                  width: 300,
-                  child: Card(
-                    color: Colors.yellow,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)
+            body: Container(
+              height: 150.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    width: 148.0,
+                    color: Colors.red,
+                    child: Center(
+                      child: ListTile(
+                        leading: Icon(Icons.home),
+                        title: Text("Home"),
+                      ),
                     ),
-                    elevation: 10,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(14.0),
-                          child: ListTile(
-                            leading: Icon(
-                                Icons.person,
-                                size: 40,
-                                color: Colors.blue,
-                            ),
-                            title: Text(
-                              "Ibrahima Diagne Seck",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black
-                              ),
-                            ),
-                            subtitle: Text(
-                              "COO",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                fontSize: 16
-                              )
-                            ),
-                          ),
-                        ),
-                        ButtonBar(
-                          children: [
-                            ElevatedButton.icon(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.download,
-                                size: 24.0,
-                              ),
-                              label: Text('Download'),
-                            ),
-                            TextButton.icon(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors.lightBlueAccent
-                              ),
-                              icon: Icon(
-                                Icons.download,
-                                size: 24.0,
-                              ),
-                              label: Text('Download'),
-                            ),
-                            // OutlinedButton.icon(
-                            //   onPressed: () {},
-                            //   icon: Icon(
-                            //     Icons.download,
-                            //     size: 24.0,
-                            //   ),
-                            //   label: Text('Download'),
-                            // )
-                          ],
-                        ),
-
-                      ],
+                  ),
+                  Container(
+                    width: 148.0,
+                    color: Colors.blue,
+                    child: Center(
+                      child: ListTile(
+                        leading: Icon(Icons.person_pin),
+                        title: Text("Profile"),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 148.0,
+                    color: Colors.green,
+                    child: Center(
+                      child: ListTile(
+                        leading: Icon(Icons.call),
+                        title: Text("Contact"),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 148.0,
+                    color: Colors.yellow,
+                    child: Center(
+                      child: ListTile(
+                        leading: Icon(Icons.settings),
+                        title: Text("Setting"),
+                      ),
                     ),
                   )
-                ),
-              ),
+                ],
+              )
             )
         )
     );
   }
 }
+
+
+// ********************************************************
+
