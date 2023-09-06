@@ -1760,72 +1760,763 @@ import 'package:flutter_project_1/newcard.dart';
 
 // ********************************************************
 
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("Horizontal List"),
+//             ),
+//             body: Container(
+//               height: 150.0,
+//               child: ListView(
+//                 scrollDirection: Axis.horizontal,
+//                 children: [
+//                   Container(
+//                     width: 148.0,
+//                     color: Colors.red,
+//                     child: Center(
+//                       child: ListTile(
+//                         leading: Icon(Icons.home),
+//                         title: Text("Home"),
+//                       ),
+//                     ),
+//                   ),
+//                   Container(
+//                     width: 148.0,
+//                     color: Colors.blue,
+//                     child: Center(
+//                       child: ListTile(
+//                         leading: Icon(Icons.person_pin),
+//                         title: Text("Profile"),
+//                       ),
+//                     ),
+//                   ),
+//                   Container(
+//                     width: 148.0,
+//                     color: Colors.green,
+//                     child: Center(
+//                       child: ListTile(
+//                         leading: Icon(Icons.call),
+//                         title: Text("Contact"),
+//                       ),
+//                     ),
+//                   ),
+//                   Container(
+//                     width: 148.0,
+//                     color: Colors.yellow,
+//                     child: Center(
+//                       child: ListTile(
+//                         leading: Icon(Icons.settings),
+//                         title: Text("Setting"),
+//                       ),
+//                     ),
+//                   )
+//                 ],
+//               )
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+//
+// class MyApp extends StatefulWidget {
+//   // const MyApp({super.key});
+//
+//   @override
+//   _MyAppState createState() => _MyAppState();
+// }
+//
+// class _MyAppState extends State<MyApp> {
+//
+//   String output = "0";
+//   String _output = "0";
+//
+//   String operand = "";
+//
+//   double num1 = 0.0;
+//   double num2 = 0.0;
+//
+//   operation(String btnText) {
+//     if(btnText == "C") {
+//       _output = "0";
+//       num1 = 0.0;
+//       num2 = 0.0;
+//       operand = "";
+//     } else if(btnText == "+" || btnText == "-" || btnText == "x" || btnText == "/") {
+//       num1 = double.parse(output);
+//       operand = btnText;
+//       _output = "0";
+//     } else if(btnText == "=") {
+//       num2 = double.parse(output);
+//
+//       if(operand == "-") {
+//         _output = (num1 - num2).toString();
+//       }
+//       if(operand == "+") {
+//         _output = (num1 + num2).toString();
+//       }
+//       if(operand == "x") {
+//         _output = (num1 * num2).toString();
+//       }
+//       if(operand == "/") {
+//         _output = (num1 / num2).toString();
+//       }
+//
+//       num1 = 0.0;
+//       num2 = 0.0;
+//       operand = "";
+//
+//     } else {
+//       _output = _output + btnText;
+//     }
+//
+//
+//     setState(() {
+//       output = double.parse(_output).toStringAsFixed(2);
+//     });
+//
+//   }
+//
+//   Widget button(String btnText) {
+//     return Expanded(
+//         child: RawMaterialButton(
+//           shape: Border.all(
+//               color: Colors.black,
+//               width: 2
+//           ),
+//           fillColor: Colors.black12,
+//           padding: EdgeInsets.all(30.0),
+//           splashColor: Colors.black,
+//           child: Text(
+//               "$btnText",
+//               style: TextStyle(
+//                 fontSize: 30,
+//                 color: Colors.white,
+//                 fontWeight: FontWeight.w600
+//               ),
+//           ),
+//           onPressed: () {
+//             operation(btnText);
+//           },
+//         )
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//           appBar: AppBar(
+//             title: Text("Calculator"),
+//             backgroundColor: Colors.black12,
+//           ),
+//           body: Container(
+//               child: Column(
+//                 mainAxisAlignment: MainAxisAlignment.end,
+//                 children: [
+//                   Expanded(
+//                       child: Container(
+//                         alignment: Alignment.bottomRight,
+//                         decoration: BoxDecoration(
+//                           border: Border.all(color: Colors.black, width: 2),
+//                           color: Colors.black12
+//                         ),
+//                         padding: EdgeInsets.all(20),
+//                         margin: EdgeInsets.only(bottom: 8),
+//                         child: Text(
+//                             "$output",
+//                             style: TextStyle(
+//                               fontSize: 60,
+//                               fontWeight: FontWeight.w600
+//                             ),
+//                         )
+//                       )
+//                   ),
+//                   Row(
+//                     children: [
+//                       button("7"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("8"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("9"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("/"),
+//                     ],
+//                   ),
+//                   SizedBox(
+//                       height: 5
+//                   ),
+//                   Row(
+//                     children: [
+//                       button("4"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("5"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("6"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("x"),
+//                     ],
+//                   ),
+//                   SizedBox(
+//                       height: 5
+//                   ),
+//                   Row(
+//                     children: [
+//                       button("1"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("2"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("3"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("-"),
+//                     ],
+//                   ),
+//                   SizedBox(
+//                       height: 5
+//                   ),
+//                   Row(
+//                     children: [
+//                       button("0"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("C"),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("="),
+//                       SizedBox(
+//                           width: 5
+//                       ),
+//                       button("+"),
+//                     ],
+//                   )
+//                 ],
+//               )
+//           )
+//       ),
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp(
+//       // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   // final List<String> names;
+//
+//   // MyApp({Key? key, required this.names}):super(key: key);
+//
+// @override
+// Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//           appBar: AppBar(
+//             title: Text("GridView"),
+//           ),
+//           body: GridView.count(
+//               crossAxisCount: 2,
+//               mainAxisSpacing: 8.0,
+//               crossAxisSpacing: 18.0,
+//               children: List.generate(datas.length, (index) {
+//                   return Center(
+//                     child: NewCard(
+//                       datas: datas[index],
+//                     )
+//                   );
+//                 })
+//           )
+//         )
+//     );
+//   }
+// }
+//
+// class data {
+//   const data({
+//     required this.title,
+//     required this.icon
+//   });
+//   final String title;
+//   final IconData icon;
+// }
+//
+// const List<data> datas = const <data>[
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//
+// ];
+
+
+// ********************************************************
+
+
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp(
+//     // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   // final List<String> names;
+//
+//   // MyApp({Key? key, required this.names}):super(key: key);
+//
+//   List<String> images = [
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqx3gj_Isq1D13W3eORlVU5wyyrTxI4uQvoA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIsdciOvv515Cuc8Wi8hU1uWT0aSdAEnVHVA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKE6jF0G0S-gFbgV8HEfTZEFHqJtYFN6M7Q&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqx3gj_Isq1D13W3eORlVU5wyyrTxI4uQvoA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIsdciOvv515Cuc8Wi8hU1uWT0aSdAEnVHVA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKE6jF0G0S-gFbgV8HEfTZEFHqJtYFN6M7Q&usqp=CAU"
+//
+//   ];
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("GridView"),
+//             ),
+//             body: GridView.builder(
+//                 itemCount: images.length,
+//                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                   crossAxisCount: 2,
+//                   mainAxisSpacing: 8.0,
+//                   crossAxisSpacing: 18.0// Adjust as needed
+//                 ),
+//                 itemBuilder: (BuildContext context, int index) {
+//                   return Container(
+//                       width: 200,
+//                       height: 200,
+//                       child: Image.network(images[index])
+//                   );
+//                 }
+//             )
+//         )
+//     );
+//   }
+// }
+//
+// class data {
+//   const data({
+//     required this.title,
+//     required this.icon
+//   });
+//   final String title;
+//   final IconData icon;
+// }
+//
+// const List<data> datas = const <data>[
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//
+// ];
+
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp(
+//     // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   // final List<String> names;
+//
+//   // MyApp({Key? key, required this.names}):super(key: key);
+//
+//   List<String> images = [
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqx3gj_Isq1D13W3eORlVU5wyyrTxI4uQvoA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIsdciOvv515Cuc8Wi8hU1uWT0aSdAEnVHVA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKE6jF0G0S-gFbgV8HEfTZEFHqJtYFN6M7Q&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqx3gj_Isq1D13W3eORlVU5wyyrTxI4uQvoA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIsdciOvv515Cuc8Wi8hU1uWT0aSdAEnVHVA&usqp=CAU",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKE6jF0G0S-gFbgV8HEfTZEFHqJtYFN6M7Q&usqp=CAU"
+//
+//   ];
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("GridView"),
+//             ),
+//             body: GridView.extent(
+//                 primary: false,
+//                 padding: EdgeInsets.all(8.0),
+//                 maxCrossAxisExtent: 250,
+//               children: [
+//                 Container(
+//                   child: Image.network(
+//                       "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                       width: 200,
+//                       height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 ),
+//                 Container(
+//                   child: Image.network(
+//                     "https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_640.jpg",
+//                     width: 200,
+//                     height: 200,
+//                   ),
+//                 )
+//               ],
+//             )
+//         )
+//     );
+//   }
+// }
+//
+// class data {
+//   const data({
+//     required this.title,
+//     required this.icon
+//   });
+//   final String title;
+//   final IconData icon;
+// }
+//
+// const List<data> datas = const <data>[
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//   const data(title: 'Home', icon: Icons.home),
+//
+// ];
+
+
+// ********************************************************
+
+
+// ********************************************************
+
+// import 'package:fluttertoast/fluttertoast.dart';
+//
+//
+// void main() {
+//   runApp(MyApp(
+//     // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   void showToast() {
+//     Fluttertoast.showToast(
+//         msg: "This is Center Short Toast",
+//         toastLength: Toast.LENGTH_SHORT,
+//         gravity: ToastGravity.CENTER,
+//         timeInSecForIosWeb: 1,
+//         backgroundColor: Colors.red,
+//         textColor: Colors.white,
+//         fontSize: 16.0
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("GridView"),
+//             ),
+//             body: Center(
+//               child: Container(
+//                 child: TextButton.icon(
+//                   onPressed: () {
+//                     showToast();
+//                   },
+//                   style: TextButton.styleFrom(
+//                     foregroundColor: Colors.black,
+//                     backgroundColor: Colors.blue
+//                   ),
+//                   icon: Icon(
+//                     Icons.circle,
+//                     size: 24.0,
+//                   ),
+//                   label: Text('This is toast'),
+//                 ),
+//               ),
+//             )
+//         )
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+// ********************************************************
+
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(
+    // names: List<String>.generate(50, (index) => "Coders!! $index")
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  // const MyApp({super.key});
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+enum Gender {
+  Male, Female, Prefer_not_to_say
+}
+
+class _MyAppState extends State<MyApp> {
+
+  bool firstbox = false;
+  bool secondbox = true;
+
+  Gender gender = Gender.Male;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text("Horizontal List"),
-            ),
-            body: Container(
-              height: 150.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Checkbox and RadioButton")
+        ),
+        body: Container(
+          padding: EdgeInsets.only(top: 20, left: 20),
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  Container(
-                    width: 148.0,
-                    color: Colors.red,
-                    child: Center(
-                      child: ListTile(
-                        leading: Icon(Icons.home),
-                        title: Text("Home"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 148.0,
-                    color: Colors.blue,
-                    child: Center(
-                      child: ListTile(
-                        leading: Icon(Icons.person_pin),
-                        title: Text("Profile"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 148.0,
-                    color: Colors.green,
-                    child: Center(
-                      child: ListTile(
-                        leading: Icon(Icons.call),
-                        title: Text("Contact"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 148.0,
-                    color: Colors.yellow,
-                    child: Center(
-                      child: ListTile(
-                        leading: Icon(Icons.settings),
-                        title: Text("Setting"),
-                      ),
-                    ),
-                  )
+                  Text("Hobby"),
                 ],
+              ),
+              Row(
+                children: [
+                  Text("Painting"),
+                  Checkbox(
+                      checkColor: Colors.red,
+                      activeColor: Colors.greenAccent,
+                      value: this.firstbox,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          this.firstbox = value!; // ou null
+                        });
+                      }
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text("Singing"),
+                  Checkbox(
+                      value: this.secondbox,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          this.secondbox = value!; // ou null
+                        });
+                      }
+                  ),
+                ],
+              ),
+              CheckboxListTile(
+                  title: Text("Hey What's up??"),
+                  subtitle: Text("Fine!!!"),
+                  secondary: Icon(Icons.call),
+                  value: this.firstbox,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      this.firstbox = value!;
+                    });
+                  }
+              ),
+              ListTile(
+                leading: Radio(
+                    value: Gender.Male,
+                    groupValue: gender,
+                    onChanged: (Gender? value) {
+                      setState(() {
+                        this.gender = value!;
+                      });
+                    }
+                ),
+                title: Text("Male"),
+              ),
+              ListTile(
+                leading: Radio(
+                    value: Gender.Female,
+                    groupValue: gender,
+                    onChanged: (Gender? value) {
+                      setState(() {
+                        this.gender = value!;
+                      });
+                    }
+                ),
+                title: Text("Female"),
+              ),
+              ListTile(
+                leading: Radio(
+                    value: Gender.Prefer_not_to_say,
+                    groupValue: gender,
+                    onChanged: (Gender? value) {
+                      setState(() {
+                        this.gender = value!;
+                      });
+                    }
+                ),
+                title: Text("Prefer not to say"),
               )
-            )
-        )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
 
 
+
 // ********************************************************
+
+
+
+
+
 
