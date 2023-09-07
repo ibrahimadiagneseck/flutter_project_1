@@ -1,5 +1,6 @@
 // import 'package:flutter/cupertino.dart';
 import 'dart:collection';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project_1/newcard.dart';
@@ -2387,129 +2388,129 @@ import 'package:flutter_project_1/newcard.dart';
 
 // ********************************************************
 
-void main() {
-  runApp(MyApp(
-    // names: List<String>.generate(50, (index) => "Coders!! $index")
-  ));
-}
-
-class MyApp extends StatefulWidget {
-  // const MyApp({super.key});
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-enum Gender {
-  Male, Female, Prefer_not_to_say
-}
-
-class _MyAppState extends State<MyApp> {
-
-  bool firstbox = false;
-  bool secondbox = true;
-
-  Gender gender = Gender.Male;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Checkbox and RadioButton")
-        ),
-        body: Container(
-          padding: EdgeInsets.only(top: 20, left: 20),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text("Hobby"),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("Painting"),
-                  Checkbox(
-                      checkColor: Colors.red,
-                      activeColor: Colors.greenAccent,
-                      value: this.firstbox,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          this.firstbox = value!; // ou null
-                        });
-                      }
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("Singing"),
-                  Checkbox(
-                      value: this.secondbox,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          this.secondbox = value!; // ou null
-                        });
-                      }
-                  ),
-                ],
-              ),
-              CheckboxListTile(
-                  title: Text("Hey What's up??"),
-                  subtitle: Text("Fine!!!"),
-                  secondary: Icon(Icons.call),
-                  value: this.firstbox,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      this.firstbox = value!;
-                    });
-                  }
-              ),
-              ListTile(
-                leading: Radio(
-                    value: Gender.Male,
-                    groupValue: gender,
-                    onChanged: (Gender? value) {
-                      setState(() {
-                        this.gender = value!;
-                      });
-                    }
-                ),
-                title: Text("Male"),
-              ),
-              ListTile(
-                leading: Radio(
-                    value: Gender.Female,
-                    groupValue: gender,
-                    onChanged: (Gender? value) {
-                      setState(() {
-                        this.gender = value!;
-                      });
-                    }
-                ),
-                title: Text("Female"),
-              ),
-              ListTile(
-                leading: Radio(
-                    value: Gender.Prefer_not_to_say,
-                    groupValue: gender,
-                    onChanged: (Gender? value) {
-                      setState(() {
-                        this.gender = value!;
-                      });
-                    }
-                ),
-                title: Text("Prefer not to say"),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// void main() {
+//   runApp(MyApp(
+//     // names: List<String>.generate(50, (index) => "Coders!! $index")
+//   ));
+// }
+//
+// class MyApp extends StatefulWidget {
+//   // const MyApp({super.key});
+//
+//   @override
+//   _MyAppState createState() => _MyAppState();
+// }
+//
+// enum Gender {
+//   Male, Female, Prefer_not_to_say
+// }
+//
+// class _MyAppState extends State<MyApp> {
+//
+//   bool firstbox = false;
+//   bool secondbox = true;
+//
+//   Gender gender = Gender.Male;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text("Checkbox and RadioButton")
+//         ),
+//         body: Container(
+//           padding: EdgeInsets.only(top: 20, left: 20),
+//           child: Column(
+//             children: [
+//               Row(
+//                 children: [
+//                   Text("Hobby"),
+//                 ],
+//               ),
+//               Row(
+//                 children: [
+//                   Text("Painting"),
+//                   Checkbox(
+//                       checkColor: Colors.red,
+//                       activeColor: Colors.greenAccent,
+//                       value: this.firstbox,
+//                       onChanged: (bool? value) {
+//                         setState(() {
+//                           this.firstbox = value!; // ou null
+//                         });
+//                       }
+//                   ),
+//                 ],
+//               ),
+//               Row(
+//                 children: [
+//                   Text("Singing"),
+//                   Checkbox(
+//                       value: this.secondbox,
+//                       onChanged: (bool? value) {
+//                         setState(() {
+//                           this.secondbox = value!; // ou null
+//                         });
+//                       }
+//                   ),
+//                 ],
+//               ),
+//               CheckboxListTile(
+//                   title: Text("Hey What's up??"),
+//                   subtitle: Text("Fine!!!"),
+//                   secondary: Icon(Icons.call),
+//                   value: this.firstbox,
+//                   onChanged: (bool? value) {
+//                     setState(() {
+//                       this.firstbox = value!;
+//                     });
+//                   }
+//               ),
+//               ListTile(
+//                 leading: Radio(
+//                     value: Gender.Male,
+//                     groupValue: gender,
+//                     onChanged: (Gender? value) {
+//                       setState(() {
+//                         this.gender = value!;
+//                       });
+//                     }
+//                 ),
+//                 title: Text("Male"),
+//               ),
+//               ListTile(
+//                 leading: Radio(
+//                     value: Gender.Female,
+//                     groupValue: gender,
+//                     onChanged: (Gender? value) {
+//                       setState(() {
+//                         this.gender = value!;
+//                       });
+//                     }
+//                 ),
+//                 title: Text("Female"),
+//               ),
+//               ListTile(
+//                 leading: Radio(
+//                     value: Gender.Prefer_not_to_say,
+//                     groupValue: gender,
+//                     onChanged: (Gender? value) {
+//                       setState(() {
+//                         this.gender = value!;
+//                       });
+//                     }
+//                 ),
+//                 title: Text("Prefer not to say"),
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 
@@ -2517,6 +2518,394 @@ class _MyAppState extends State<MyApp> {
 
 
 
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("Horizontal List"),
+//             ),
+//             body: Linear_progress_bar()
+//         )
+//     );
+//   }
+// }
+//
+// class Linear_progress_bar extends StatefulWidget {
+//   // const Linear_progress_bar({super.key});
+//
+//   @override
+//   _Linear_progress_barState createState() => _Linear_progress_barState();
+// }
+//
+// class _Linear_progress_barState extends State<Linear_progress_bar> {
+//
+//   bool loading = false;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Column(
+//         children: [
+//           Center(
+//             child: Container(
+//               margin: EdgeInsets.all(150),
+//               child: loading? LinearProgressIndicator():Text("Pleae Click to download!!")
+//             ),
+//           ),
+//           TextButton(
+//               onPressed: () {
+//                 setState(() {
+//                   loading = !loading;
+//                 });
+//               },
+//               style: TextButton.styleFrom(
+//                 foregroundColor: Colors.white,
+//                 backgroundColor: Colors.blue
+//               ),
+//               child: Text("Download")
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+
+// ********************************************************
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: Scaffold(
+//             appBar: AppBar(
+//               title: Text("Horizontal List"),
+//             ),
+//             body: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                 children: [
+//                   Column(
+//                     children: [
+//                       Circular_progress_bar()
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       Snack_bar()
+//                     ],
+//                   )
+//                 ],
+//               ),
+//             )
+//         )
+//     );
+//   }
+// }
+//
+// class Circular_progress_bar extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         child: CircularProgressIndicator(
+//           backgroundColor: Colors.green,
+//           strokeWidth: 2,
+//         )
+//     );
+//   }
+// }
+//
+// class Snack_bar extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         child: TextButton(
+//           child: Text("Snack Bar"),
+//           onPressed: () {
+//             final msg = SnackBar(
+//               content: Text("This is notification"),
+//               duration: Duration(seconds: 10),
+//               // action: SnackBarAction(),
+//             );
+//             ScaffoldMessenger.of(context).showSnackBar(msg);
+//           },
+//           style: TextButton.styleFrom(
+//             foregroundColor: Colors.white,
+//             backgroundColor: Colors.blue
+//           ),
+//         )
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Tooltip_widget()
+//     );
+//   }
+// }
+//
+//
+// class Tooltip_widget extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Tooltip"),
+//       ),
+//       body: Container(
+//         alignment: Alignment.center,
+//         child: Tooltip(
+//           waitDuration: Duration(seconds: 2),
+//           showDuration: Duration(seconds: 3),
+//           textStyle: TextStyle(
+//             fontSize: 20,
+//             color: Colors.white
+//           ),
+//           decoration: BoxDecoration(
+//             color: Colors.cyan,
+//             borderRadius: BorderRadiusDirectional.circular(20)
+//           ),
+//           message: "Set Alarm",
+//           child: ElevatedButton(
+//             onPressed: () {
+//               // Your button's action here
+//             },
+//             child: Text("Press Me"),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: SliderApp()
+//     );
+//   }
+// }
+//
+//
+// class SliderApp extends StatefulWidget {
+//   // const Slider({super.key});
+//
+//   @override
+//   _SliderState createState() => _SliderState();
+// }
+//
+// class _SliderState extends State<SliderApp> {
+//
+//   double _value = 6.0;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Slider"),
+//       ),
+//       body: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: <Widget>[
+//           Icon(
+//             Icons.volume_up,
+//             size: 50.0,
+//           ),
+//           Slider(
+//             value: _value,
+//             min: 1.0,
+//             max: 20.0,
+//             activeColor: Colors.green,
+//             inactiveColor: Colors.red,
+//             label: "Set up Volume",
+//             onChanged: (double newValue) {
+//               setState(() {
+//                 _value = newValue;
+//               });
+//             },
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+
+
+// ********************************************************
+
+// import 'package:flutter_swiper_view/flutter_swiper_view.dart';
+//
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: ImageSlider()
+//     );
+//   }
+// }
+//
+// class ImageSlider extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: EdgeInsets.all(40),
+//       child: imageSlider(context),
+//       constraints: BoxConstraints.expand(
+//         height: 200
+//       ),
+//     );
+//   }
+// }
+//
+// Swiper imageSlider(BuildContext context) {
+//   return new Swiper(
+//       autoplay: true,
+//       itemCount: 10,
+//       itemBuilder: (BuildContext context, int index) {
+//         return Image.network(
+//           "https://media.gettyimages.com/id/486581767/fr/photo/senegal-island-of-goree.jpg?s=612x612&w=0&k=20&c=hAANrJg8xRO5cvnvLZtpxbCnYAjgNIwwIdb_4UW48Wo=",
+//           // fit: BoxFit.cover,
+//         );
+//       }
+//   );
+// }
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: SwitchWidget()
+    );
+  }
+}
+
+class SwitchWidget extends StatefulWidget {
+  // const SwitchWidget({super.key});
+
+  @override
+  _SwitchWidgetState createState() => _SwitchWidgetState();
+}
+
+class _SwitchWidgetState extends State<SwitchWidget> {
+
+  bool switch_state = false;
+  var textValue = "Switch is OFF";
+
+  void displayState(bool value) {
+
+    if(switch_state == false) {
+      setState(() {
+        switch_state = true;
+        textValue = "Switch is ON";
+      });
+    } else {
+      setState(() {
+        switch_state = false;
+        textValue = "Switch is OFF";
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Switch"),
+      ),
+      body: Column(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Transform.scale(
+              scale: 2,
+              child: Switch(
+                onChanged: displayState,
+                value: switch_state,
+              ),
+            )
+          ),
+          Text("$textValue")
+        ],
+      )
+    );
+  }
+}
+
+// ********************************************************
 
 
 
