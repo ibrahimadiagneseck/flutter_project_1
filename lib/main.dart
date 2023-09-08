@@ -1,9 +1,12 @@
 // import 'package:flutter/cupertino.dart';
+import 'dart:async';
 import 'dart:collection';
 import 'dart:math';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_1/newcard.dart';
+import 'package:flutter_project_1/signup.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -2839,7 +2842,610 @@ import 'package:flutter_project_1/newcard.dart';
 
 // ********************************************************
 
-void main() {
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: SwitchWidget()
+//     );
+//   }
+// }
+//
+// class SwitchWidget extends StatefulWidget {
+//   // const SwitchWidget({super.key});
+//
+//   @override
+//   _SwitchWidgetState createState() => _SwitchWidgetState();
+// }
+//
+// class _SwitchWidgetState extends State<SwitchWidget> {
+//
+//   bool switch_state = false;
+//   var textValue = "Switch is OFF";
+//
+//   void displayState(bool value) {
+//
+//     if(switch_state == false) {
+//       setState(() {
+//         switch_state = true;
+//         textValue = "Switch is ON";
+//       });
+//     } else {
+//       setState(() {
+//         switch_state = false;
+//         textValue = "Switch is OFF";
+//       });
+//     }
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Switch"),
+//       ),
+//       body: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Container(
+//             alignment: Alignment.center,
+//             child: Transform.scale(
+//               scale: 2,
+//               child: Switch(
+//                 onChanged: displayState,
+//                 value: switch_state,
+//                 activeColor: Colors.cyan,
+//                 inactiveThumbColor: Colors.cyanAccent,
+//                 inactiveTrackColor: Colors.cyanAccent,
+//                 activeTrackColor: Colors.blue,
+//               ),
+//             )
+//           ),
+//           Text("$textValue")
+//         ],
+//       )
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+// ********************************************************
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: TableWidget()
+//     );
+//   }
+// }
+//
+// class TableWidget extends StatefulWidget {
+//   const TableWidget({super.key});
+//
+//   @override
+//   _TableWidgetState createState() => _TableWidgetState();
+// }
+//
+// class _TableWidgetState extends State<TableWidget> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Table"),
+//       ),
+//       body: Container(
+//         margin: EdgeInsets.all(20),
+//         child: Table(
+//           defaultColumnWidth: FixedColumnWidth(120),
+//           border: TableBorder.all(
+//             color: Colors.blueAccent,
+//             width: 4,
+//             style: BorderStyle.solid
+//           ),
+//           children: [
+//             TableRow(
+//               children: [
+//                 Column(
+//                   children: [
+//                     Text("Name")
+//                   ],
+//                 ),
+//                 Column(
+//                   children: [
+//                     Text("Name")
+//                   ],
+//                 ),
+//                 Column(
+//                   children: [
+//                     Text("Name")
+//                   ],
+//                 )
+//               ]
+//             ),
+//             TableRow(
+//                 children: [
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   )
+//                 ]
+//             ),
+//             TableRow(
+//                 children: [
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       Text("Name")
+//                     ],
+//                   )
+//                 ]
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+// import 'package:table_calendar/table_calendar.dart';
+//
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: CalendarWidget()
+//     );
+//   }
+// }
+// class CalendarWidget extends StatefulWidget {
+//   const CalendarWidget({Key? key}) : super(key: key);
+//
+//   @override
+//   _CalendarWidgetState createState() => _CalendarWidgetState();
+// }
+//
+//
+//
+// class _CalendarWidgetState extends State<CalendarWidget> {
+//   // Le format actuel du calendrier (mois, semaine, etc.)
+//   CalendarFormat _calendarFormat = CalendarFormat.month;
+//
+//   // Le jour actuellement en focus (utilisé pour le défilement)
+//   DateTime _focusedDay = DateTime.now();
+//
+//   // Le jour sélectionné dans le calendrier
+//   DateTime _selectedDay = DateTime.now();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Calendar"),
+//       ),
+//       body: Column(
+//         children: [
+//           TableCalendar(
+//
+//             formatAnimationDuration: Duration(milliseconds: 500),
+//             formatAnimationCurve: Curves.easeInOut,
+//             pageAnimationDuration: Duration(milliseconds: 800),
+//             pageAnimationCurve: Curves.fastOutSlowIn,
+//             startingDayOfWeek: StartingDayOfWeek.monday,
+//
+//             headerStyle: HeaderStyle(
+//               titleCentered: true, // Centre le titre
+//               titleTextStyle: TextStyle(
+//                 fontSize: 20.0, // Taille de la police
+//                 fontWeight: FontWeight.bold, // Poids de la police
+//                 color: Colors.blue, // Couleur du texte
+//               ),
+//               formatButtonVisible: true, // Affiche le bouton de changement de format
+//               formatButtonDecoration: BoxDecoration(
+//                 color: Colors.yellow, // Couleur de l'arrière-plan du bouton
+//                 borderRadius: BorderRadius.circular(20.0), // Bordure du bouton
+//               ),
+//               formatButtonTextStyle: TextStyle(
+//                 fontSize: 16.0, // Taille de la police du bouton
+//                 color: Colors.black, // Couleur du texte du bouton
+//               ),
+//             ),
+//
+//
+//
+//             calendarStyle: CalendarStyle(
+//
+//               todayDecoration: BoxDecoration(
+//                 shape: BoxShape.circle, // Forme du jour actuel (cercle)
+//                 color: Colors.yellow,  // Couleur du fond du jour actuel (jaune)
+//               ),
+//
+//               todayTextStyle: TextStyle(
+//                 fontWeight: FontWeight.bold,
+//                 color: Colors.white
+//               ),
+//
+//
+//
+//               weekendDecoration: BoxDecoration(
+//                 shape: BoxShape.circle, // Forme du jour actuel (cercle)
+//                 color: Colors.blueAccent, // Couleur du fond pour les jours de week-end
+//               ),
+//               weekendTextStyle: TextStyle(
+//                 color: Colors.white, // Couleur du texte pour les jours de week-end
+//               ),
+//             ),
+//
+//             // Plage de dates autorisées
+//             firstDay: DateTime.utc(2023, 1, 1),
+//             lastDay: DateTime.utc(2023, 12, 31),
+//
+//             // Le jour actuellement en focus (utilisé pour le défilement)
+//             focusedDay: _focusedDay,
+//
+//
+//             // Le format du calendrier actuel (mois, semaine, etc.)
+//             calendarFormat: _calendarFormat,
+//
+//             // Callback pour le changement de format du calendrier
+//             onFormatChanged: (format) {
+//               setState(() {
+//                 _calendarFormat = format;
+//               });
+//             },
+//
+//             // Callback lorsque l'utilisateur sélectionne un jour
+//             onDaySelected: (selectedDay, focusedDay) {
+//               setState(() {
+//                 _selectedDay = selectedDay;
+//                 _focusedDay = focusedDay; // Met à jour le jour en focus vers le jour sélectionné
+//               });
+//             }
+//           ),
+//           Text(
+//             'Selected Day: $_selectedDay',
+//             style: TextStyle(fontSize: 16, color: Colors.blueAccent),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: FirstScreen(),
+//     );
+//   }
+// }
+//
+// class FirstScreen extends StatelessWidget {
+//   const FirstScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("FirstScreen"),
+//       ),
+//       body: Center(
+//         child: Container(
+//           child: FloatingActionButton.extended(
+//               onPressed: () {
+//                 Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+//               },
+//               label: Text("Go to Second Screen")
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+// class SecondScreen extends StatelessWidget {
+//   const SecondScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("SecondScreen"),
+//       ),
+//       body: Center(
+//         child: Container(
+//           child: FloatingActionButton.extended(
+//               onPressed: () {
+//                 Navigator.pop(context);
+//               },
+//               label: Text("Back to First Screen")
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+
+
+
+// ********************************************************
+
+
+
+
+// ********************************************************
+
+
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       initialRoute: '/',
+//       routes: {
+//         '/': (context) => FirstScreen(),
+//         '/second': (context) => SecondScreen()
+//       }
+//     );
+//   }
+// }
+//
+// class FirstScreen extends StatelessWidget {
+//   const FirstScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("FirstScreen"),
+//       ),
+//       body: Center(
+//         child: Container(
+//           child: FloatingActionButton.extended(
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/second');
+//               },
+//               label: Text("Go to Second Screen")
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+// class SecondScreen extends StatelessWidget {
+//   const SecondScreen({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("SecondScreen"),
+//       ),
+//       body: Center(
+//         child: Container(
+//           child: FloatingActionButton.extended(
+//               onPressed: () {
+//                 Navigator.pop(context);
+//               },
+//               label: Text("Back to First Screen")
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+// import 'dart:async';
+//
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: SplashScreen(),
+//         debugShowCheckedModeBanner: false
+//     );
+//   }
+// }
+//
+// class SplashScreen extends StatefulWidget {
+//   const SplashScreen({super.key});
+//
+//   @override
+//   _SplashScreenState createState() => _SplashScreenState();
+// }
+//
+// class _SplashScreenState extends State<SplashScreen> {
+//
+//   void initState() {
+//     super.initState();
+//     Timer(
+//       Duration(seconds: 4), () => {
+//         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage())),
+//       }
+//     );
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         color: Colors.white,
+//         child: Image.network("https://th.bing.com/th/id/OIP.xRA_m1gxfh8_aCtBHxwYpwHaEr?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"),
+//     );
+//   }
+// }
+//
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("HomePage"),
+//       ),
+//       body: Center(
+//         child: Text("Welcome to CodeWarriors Family!!"),
+//       ),
+//     );
+//   }
+// }
+
+
+// ********************************************************
+
+
+
+// ********************************************************
+
+// import 'dart:async';
+// import 'package:easy_splash_screen/easy_splash_screen.dart';
+//
+// void main() {
+//   runApp(MyApp());
+// }
+//
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         home: SplashScreen(),
+//         debugShowCheckedModeBanner: false
+//     );
+//   }
+// }
+//
+//
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("HomePage"),
+//       ),
+//       body: Center(
+//         child: Text("Welcome to CodeWarriors Family!!"),
+//       ),
+//     );
+//   }
+// }
+//
+// class SplashScreen extends StatelessWidget {
+//   const SplashScreen({super.key});
+//
+//   Future<Widget> futureCall() async {
+//     // do async operation ( api call, auto login)
+//     return Future.value(new HomePage());
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return EasySplashScreen(
+//       logo: Image.network(
+//           'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
+//       title: Text(
+//         "Title",
+//         style: TextStyle(
+//           fontSize: 18,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       backgroundColor: Colors.grey.shade400,
+//       showLoader: true,
+//       loadingText: Text("Loading..."),
+//       loaderColor: Colors.deepOrange,
+//       futureNavigator: futureCall(),
+//     );
+//   }
+// }
+
+
+
+// ********************************************************
+
+
+// ********************************************************
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -2848,64 +3454,84 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: SwitchWidget()
+        home: HomePage(),
+        debugShowCheckedModeBanner: false
     );
   }
 }
 
-class SwitchWidget extends StatefulWidget {
-  // const SwitchWidget({super.key});
 
-  @override
-  _SwitchWidgetState createState() => _SwitchWidgetState();
-}
-
-class _SwitchWidgetState extends State<SwitchWidget> {
-
-  bool switch_state = false;
-  var textValue = "Switch is OFF";
-
-  void displayState(bool value) {
-
-    if(switch_state == false) {
-      setState(() {
-        switch_state = true;
-        textValue = "Switch is ON";
-      });
-    } else {
-      setState(() {
-        switch_state = false;
-        textValue = "Switch is OFF";
-      });
-    }
-  }
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Switch"),
+        title: Text("Signup Using Firebase"),
       ),
-      body: Column(
-        children: [
-          Container(
-            alignment: Alignment.center,
-            child: Transform.scale(
-              scale: 2,
-              child: Switch(
-                onChanged: displayState,
-                value: switch_state,
-              ),
-            )
-          ),
-          Text("$textValue")
-        ],
-      )
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton.extended(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
+                },
+                label: Text("SignUp")
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
+
+
+
 // ********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
