@@ -6,7 +6,7 @@ import 'dart:math';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project_1/newcard.dart';
-// import 'package:flutter_project_1/signup.dart';
+import 'package:flutter_project_1/signup.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -3372,86 +3372,9 @@ import 'package:flutter_project_1/newcard.dart';
 
 // ********************************************************
 
-import 'dart:async';
-import 'package:easy_splash_screen/easy_splash_screen.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: SplashScreen(),
-        debugShowCheckedModeBanner: false
-    );
-  }
-}
-
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("HomePage"),
-      ),
-      body: Center(
-        child: Text("Welcome to CodeWarriors Family!!"),
-      ),
-    );
-  }
-}
-
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-
-  Future<Widget> futureCall() async {
-    // Simulez une opération asynchrone (par exemple, une requête API ou une attente).
-    await Future.delayed(Duration(seconds: 6)); // Délayez pendant 3 secondes.
-    return HomePage();
-  }
-
-  // Future<Widget> futureCall() async {
-  //   // do async operation ( api call, auto login)
-  //   return Future.value(new HomePage());
-  // }
-
-  @override
-  Widget build(BuildContext context) {
-    return EasySplashScreen(
-      logo: Image.network(
-          'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
-      title: Text(
-        "Title",
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      backgroundColor: Colors.grey.shade400,
-      showLoader: true,
-      loadingText: Text("Loading..."),
-      loaderColor: Colors.deepOrange,
-      futureNavigator: futureCall(),
-    );
-  }
-}
-
-
-
-// ********************************************************
-
-
-// ********************************************************
-
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
+// import 'package:easy_splash_screen/easy_splash_screen.dart';
+//
+// void main() {
 //   runApp(MyApp());
 // }
 //
@@ -3460,7 +3383,7 @@ class SplashScreen extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
-//         home: HomePage(),
+//         home: SplashScreen(),
 //         debugShowCheckedModeBanner: false
 //     );
 //   }
@@ -3474,25 +3397,101 @@ class SplashScreen extends StatelessWidget {
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: Text("Signup Using Firebase"),
+//         title: Text("HomePage"),
 //       ),
-//       body: Container(
-//         alignment: Alignment.center,
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             FloatingActionButton.extended(
-//                 onPressed: () {
-//                   Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
-//                 },
-//                 label: Text("SignUp")
-//             ),
-//           ],
-//         ),
+//       body: Center(
+//         child: Text("Welcome to CodeWarriors Family!!"),
 //       ),
 //     );
 //   }
 // }
+//
+// class SplashScreen extends StatelessWidget {
+//   const SplashScreen({super.key});
+//
+//   Future<Widget> futureCall() async {
+//     // Simulez une opération asynchrone (par exemple, une requête API ou une attente).
+//     await Future.delayed(Duration(seconds: 6)); // Délayez pendant 3 secondes.
+//     return HomePage();
+//   }
+//
+//   // Future<Widget> futureCall() async {
+//   //   // do async operation ( api call, auto login)
+//   //   return Future.value(new HomePage());
+//   // }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return EasySplashScreen(
+//       logo: Image.network(
+//           'https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
+//       title: Text(
+//         "Title",
+//         style: TextStyle(
+//           fontSize: 18,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       backgroundColor: Colors.grey.shade400,
+//       showLoader: true,
+//       loadingText: Text("Loading..."),
+//       loaderColor: Colors.deepOrange,
+//       futureNavigator: futureCall(),
+//     );
+//   }
+// }
+
+
+
+// ********************************************************
+
+
+// ********************************************************
+
+Future<void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: HomePage(),
+        debugShowCheckedModeBanner: false
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Signup Using Firebase"),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton.extended(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
+                },
+                label: Text("SignUp")
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 
 
